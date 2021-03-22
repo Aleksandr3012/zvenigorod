@@ -1,4 +1,1 @@
-1. Отключил lazy плагин. Поставил  loading="lazy"
-
-
-rm -rf node_modules
+1. <https://aleksandr3012.github.io/zvenigorod/public/>
