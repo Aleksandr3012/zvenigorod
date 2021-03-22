@@ -1,0 +1,37 @@
+extends layout/main.pug
+
+
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sContact/_sContact.pug
+include ../blocks/sNumb/_sNumb.pug
+include ../blocks/sAbout/_sAbout.pug
+include ../blocks/sPlan/_sPlan.pug
+include ../blocks/sPlaning/_sPlaning.pug
+include ../blocks/sBy/_sBy.pug
+include ../blocks/sMap/_sMap.pug
+
+
+block variables
+	- let  mainPage= null 
+	- let  bg= null
+
+block title
+	- let  title= 'Звенигородский Посад'
+	title= title
+block pagecontent
+
+	+mob-mnu
+	+header()
+		+top-nav()
+	+headerBlock()
+	+sNumb
+	+sAbout
+	+sPlan
+	+sPlaning
+	+sBy
+	//- +sMap
+	.container.d-none.d-lg-block
+		+mnu()(class="navMenu-light")
+	+footer()
+
+

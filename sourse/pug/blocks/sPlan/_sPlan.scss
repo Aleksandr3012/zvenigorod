@@ -1,0 +1,122 @@
+// start .sPlan
+.sPlan {
+	// --sPT: ;
+	// --sPB: ;
+	// --sTPB: ;
+
+	padding-top: calc(var(--sPT) / 1.2);
+	padding-bottom: calc(var(--sPB) * 1.3);
+
+	.section-title {
+		padding-bottom: calc(var(--sTPB) * 1.1);
+	}
+
+	&__mapWrap {
+		position: relative;
+	}
+
+	&__svg {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+
+		svg {
+			max-width: 100%;
+			height: 100%;
+		}
+
+		path {
+			@include mt;
+			&:hover {
+				fill: #fff;
+			}
+		}
+	}
+
+	&__descr {
+		position: absolute;
+		right: 0;
+		padding: rem(15);
+		bottom: -50px;
+		@include media-breakpoint-up(md) {
+			bottom: 0;
+			padding: rem(35) rem(0) rem(13) rem(31);
+		}
+		background-color: #fff;
+		z-index: 10;
+		max-width: 481px;
+	}
+
+	&__color {
+		width: rem(30px);
+		height: rem(30px);
+	}
+
+	&__item {
+		margin-bottom: rem(10);
+	}
+
+	&__title {
+		color: #289502;
+		font-size: rem(15);
+		text-transform: uppercase;
+		font-weight: bold;
+	}
+
+	&__subtitle {
+		font-size: $xsmall;
+		margin-bottom: rem(15);
+	}
+
+	&__table {
+		font-size: $small;
+		width: 100%;
+		max-width: rem(224px);
+		margin-bottom: rem(15);
+	}
+	
+	&__tr {
+		@extend .row;
+		@include roww(10px);
+	}
+
+	&__td {
+		font-size: rem(15px);
+
+		&:nth-child(1) {
+			@extend .col-4;
+		}
+
+		&:nth-child(2) {
+			@extend .col-8;
+			@extend .mono;
+		}
+	}
+
+	&__popover {
+		padding: rem(15) rem(21) rem(21);
+		background-color: #fff;
+		max-width: 281px;
+	}
+	
+	&__btn {
+		@extend .btn;
+		@extend .btn-outline-dark;
+		font-size: $xsmall;
+		display: block;
+	}
+
+
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-between(md, xl) { }
+	@include media-breakpoint-only(xl) {}
+	@include media-breakpoint-down(xl) {}
+} // end.sPlan
+
+.popover {
+	.popover-header, .popover-body {
+		display: none;
+	}
+}

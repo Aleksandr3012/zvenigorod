@@ -1,0 +1,46 @@
+.footer {
+	border-top: solid 2px rgba($color: #000000, $alpha: 0.13);
+	padding-top: rem(60);
+	padding-bottom: rem(60);
+	margin-top: rem(40);
+	font-weight: 300;
+	@include media-breakpoint-down(lg) {
+		text-align: center;
+	}
+
+
+	&__dev {
+
+		a {
+			color: $body-color;
+			text-decoration: none;
+		}
+	}
+
+	&__col {
+		text-align: center;
+	}
+
+	&__copyright {
+		margin-bottom: rem(30);
+	}
+
+	p {
+		margin-bottom: rem(0);
+	}
+
+	&__tel {
+		font-size: rem(30);
+		color: $body-color;
+		text-decoration: none;
+		display: inline-block;
+		margin-bottom: rem(30);
+	}
+
+
+
+@include media-breakpoint-up(xs) {}
+@include media-breakpoint-between(md, xl) {}
+@include media-breakpoint-only(xl) {}
+@include media-breakpoint-down(xs) {}
+}

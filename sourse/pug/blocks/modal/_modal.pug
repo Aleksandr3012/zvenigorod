@@ -1,0 +1,19 @@
+
+mixin modal() 
+	//  start modals
+
+	+b.modal-win(id="modal-call" class=" " style="display: none" )
+		+form-wrap
+			input(type="hidden" name="homeTitle")
+			input(type="hidden" name="homePrice")
+			.text-center
+				+e.title.form-data.ttu ЗАПИСАТЬСЯ НА ПРОСМОТР
+			+input("Ваше Имя *")(required)
+			+input("Телефон *",'tel')(required)
+			+input("Почта *",'email')(required)
+			+polite()
+			.text-center
+				+e.BUTTON.btn.btn.btn-outline-dark(type="submit")  Отправить
+	// #modal-call
+	
+	// end modals

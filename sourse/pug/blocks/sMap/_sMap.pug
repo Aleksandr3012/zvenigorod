@@ -1,0 +1,19 @@
+mixin sMap(data)
+	// start sMap
+	+b.SECTION.sMap.section#sMap&attributes(attributes)
+		.container
+		
+			.row
+				.col-lg-5 
+					+b.section-title
+						h2 расположение посЁлка
+					p &laquo;Звенигородский посад&raquo; расположен в&nbsp;45&nbsp;км от&nbsp;МКАД по&nbsp;скоростным Новорижскому или Красногорскому шоссе.
+					p Дорога до&nbsp;посёлка займет на&nbsp;более 45&nbsp;минут. Так&nbsp;же возможен проезд на&nbsp;автобусе 881К от&nbsp;метро Строгино.
+					strong КоОрдинаты для навигатора:
+					p 55.71685187858651
+					p 36.836304400254114
+					+e.btn(href="#") Проложить маршрут
+				.col-lg-6
+					+e.map
+						<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A02ec561effc6275ba71dda0d4847a70f4dbd1d9cea16ecad13078bf39b8c7cef&amp;width=100%25&amp;height=496&amp;lang=ru_RU&amp;scroll=false"></script>
+	// end sMap

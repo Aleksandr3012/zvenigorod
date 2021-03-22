@@ -1,0 +1,15 @@
+mixin sNumb(data)
+	// start sNumb
+	+b.sNumb.section#sNumb&attributes(attributes)
+		.container
+			.row
+				mixin col(i,title,text)
+					+e.col.col-4 
+						+e.numb= i 
+						+e.title!= title 
+						p!= text
+						
+				+col('01',`ГОРОДСКИЕ коммуникации `,`Свет, газ, канализация, водопровод, высоко- скоростной интернет-кабель `)
+				+col('02',`Все дома готовы к заселению`,`Каждому дому присвоен адрес и кадастровый номер на участок`)
+				+col('03',`инфраструктура<br><br>`,`Школы, сады и магазины в пешей доступности`)
+	// end sNumb

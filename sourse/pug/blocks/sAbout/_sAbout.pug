@@ -1,0 +1,72 @@
+mixin sAbout(data)
+	// start sAbout
+	+b.SECTION.sAbout.section#sAbout&attributes(attributes)
+		.container
+			
+				
+			+e.firstRow.row
+				.col-lg-6
+					+e.small Посёлок таунхаусов “Звенигородский посад”
+					+b.section-title
+						h2 О посЁлке
+					p Посёлок включает всего 22&nbsp;двухэтажных таунхауса площадью с&nbsp;чистовой отделкой от&nbsp;145 до&nbsp;245&nbsp;м2, на&nbsp;земельных участках площадью от&nbsp;163 м2&nbsp;до&nbsp;498&nbsp;м2.
+					p Все коммуникации (газ, вода, канализация, электричество) уже подключены. Собственная котельная и&nbsp;котёл в&nbsp;кажом доме. На&nbsp;территории есть детская площадка и&nbsp;зона отдыха. Территория облагорожена: посажёны ели, газон, есть наружное освещение. Круглосуточный пост охраны.
+					p В&nbsp;строительстве применялись лучшие материалы и&nbsp;технологии. В&nbsp;отделке наружных стен использована декоративная штукатурка и&nbsp;клинкерный кирпич; кровля из&nbsp;металло-черепицы и&nbsp;представлена многослойным пирогом.
+
+				.col-lg-6
+					+e.sliderWrap--firstSlider
+						+e.slider--js.swiper-container
+							.swiper-wrapper
+								mixin slide(i)
+									+e.slide.swiper-slide
+										a(href=`img/@2x/${i}.jpg` data-fancybox="photo1") 
+											+pic(`${i}.jpg`,'','')
+								- for (var x = 1; x < 15; x++)
+									+slide(x)
+						+e.slideDescr 
+							+e.small--mb Август 2020
+							h4 Фотогалерея 
+							+e.navWrap
+								.swiper-button-hand.swiper-button-hand-prev.swiper-button-prev
+									+pic('arrow-left')
+								.swiper-pagination
+								.swiper-button-hand.swiper-button-hand-next.swiper-button-next
+									+pic('arrow-right')
+			+e.row.row
+				.col-lg-6.col-xl-5
+					+e.photoWrap(href=`img/@2x/photo1.jpg` data-fancybox="photo1") 
+						+pic('photo1.jpg','','')
+						+e.slideDescr--sm 
+							h4 СКИДКА 10%
+							p Ограниченное предложение! Акция только на&nbsp;2&nbsp;таунхауса под чистовую отделку.
+			+e.lastRow.row 
+				.col-lg-6 
+					+e.photoWrap--mt(href=`img/@2x/photo2.jpg` data-fancybox="photo2") 
+						+pic('photo2.jpg','','')
+						+e.slideDescr 
+							h4 РАССРОЧКА от&nbsp;застройщика
+							p Платите половину стоимости и&nbsp;остальные&nbsp;50% в&nbsp;течении 2-х месяцев.
+				.col-lg-6 
+					+e.sliderWrap--secondSlider
+						+e.slider--js.swiper-container
+							.swiper-wrapper
+								mixin slide(i)
+									+e.slide.swiper-slide
+										a(href=`img/@2x/2-${i}.jpg` data-fancybox="photo1") 
+											+pic(`${i}.jpg`,'','')
+								- for (var x = 1; x < 15; x++)
+									+slide(x)
+						+e.slideDescr 
+							h4 Окружение 
+							+e.navWrap
+								.swiper-button-hand.swiper-button-hand-prev.swiper-button-prev
+									+pic('arrow-left')
+								.swiper-pagination
+								.swiper-button-hand.swiper-button-hand-next.swiper-button-next
+									+pic('arrow-right')
+					+e.textWrap
+						p Звенигород&nbsp;&mdash; прекрасный город,<br> настоящая подмосковная Швейцария!
+						p Посёлок расположен в&nbsp;двух километрах от исторического центра города, где есть все необходимое для комфортной жизни: школы, детские сады, больница , поликлиника, множество мест для отдыха, детские досуговые центры, спортивные комплексы. Рядом с&nbsp;посёлком имеются продовольственные магазины, спортивный комплекс КУЗНЕЧИК, овощной рынок, кафе-ресторан ЖАН-ИВАН в&nbsp;пешей доступности.
+						p В&nbsp;городе нет крупных промышленных предприятий, что дает возможность дышать чистым воздухом и&nbsp;делает обстановку максимально благоприятной.
+
+	// end sAbout

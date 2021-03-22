@@ -1,0 +1,30 @@
+mixin headerBlock()
+	// start headerBlock
+	+b.headerBlock#headerBlock&attributes(attributes)
+
+		+e.slider--js.swiper-container
+			.swiper-wrapper
+				mixin slide(i,t, h1)
+					+e.slide.section.swiper-slide
+						+pic(`${i}.jpg`)(class='picture-bg')
+						.container
+							.row.align-items-center
+								.col-md
+									+b.section-title
+										if h1
+											h1 Закрытый посёлок всего 22 таунхауса
+										else 
+											.h1 Закрытый посёлок всего 22 таунхауса
+								.col-md-auto.d-none.d-md-block 
+									+e.numb= i 
+										| /
+										span 4
+				+slide('1','Lorem ipsum dolor sit amet consectetur')
+				+slide('2','Lorem ipsum dolor sit amet consectetur')
+				+slide('3','Lorem ipsum dolor sit amet consectetur')
+				+slide('4','','h1')
+			.swiper-pagination
+				
+
+
+	// end headerBlock

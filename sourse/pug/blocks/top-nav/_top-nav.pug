@@ -1,0 +1,42 @@
+mixin mob-mnu()
+	-
+		//- let path = require('path');
+		//- let fs = require('fs');
+		//- var requestURL = 'top-nav.json';
+		//- var request = new XMLHttpRequest();
+		//- request.open('GET', requestURL);
+		//- request.responseType = 'json';
+		//- let dataJson = JSON.parse(json);
+		//- h1= dataJson['lala'] 
+	+b.menu-mobile--js
+		+b.toggle-menu-mobile--js.on
+			span
+		+e.inner
+
+			+mnu()
+			.row 
+				.col-sm-auto 
+					+soc
+				.col
+					+e.tel(href="tel:79254122585") тел.: +7  (925) 412 25 85
+					p Офис продаж: <br>143180, МО, г. Звенигород, <br>пер Чайковского 
+					p Координаты для навигатора:<br>55.71685187858651<br>36.836304400254114
+
+			.text-right
+		//  мобильное меню
+mixin top-nav() 
+	// start top-nav
+	+b.top-nav.block-with-lazy
+		.container-fluid
+			.row.align-items-center.justify-content-between
+				.col-auto
+					+e.logo(href='/')
+						| Звенигородский Посад
+
+				.col.d-none.d-lg-block
+					+mnu()
+				.col-auto
+					+b.toggle-menu-mobile--js
+						span
+
+	// end top-nav

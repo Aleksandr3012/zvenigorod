@@ -1,0 +1,53 @@
+// start .sMap
+.sMap {
+	// --sPT: ;
+	// --sPB: ;
+	// --sTPB: ;
+
+	@include media-breakpoint-up(lg) {
+		padding-bottom: calc(var(--sPB) * 1.9);
+	}
+
+	.section-title {
+		padding-bottom: calc(var(--sTPB) * 1.7);
+	}
+
+	&__btn {
+		@extend .btn;
+		@extend .btn-outline-dark;
+		margin-bottom: rem(30);
+		margin-top: rem(28);
+	}
+
+	p {
+		@include media-breakpoint-up(lg) {
+			max-width: rem(370);
+		}
+	}
+
+	strong {
+		@extend .mono;
+		text-transform: uppercase;
+		margin-top: rem(20);
+		display: inline-block;
+		padding-bottom: rem(20);
+	}
+
+	&__map {
+		@include media-breakpoint-up(lg) {
+			margin-right: calc(-50vw + 86%);
+			height: 664px;
+		}
+		height: 400px;
+
+		> ymaps {
+			height: 100% !important;
+		}
+	}
+	
+
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-between(md, xl) { }
+	@include media-breakpoint-only(xl) {}
+	@include media-breakpoint-down(xl) {}
+} // end.sMap
