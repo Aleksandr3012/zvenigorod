@@ -21,7 +21,7 @@ mixin sAbout(data)
 									+e.slide.swiper-slide
 										a(href=`img/@2x/${i}.jpg` data-fancybox="photo1") 
 											+pic(`${i}.jpg`,'','')
-								- for (var x = 1; x < 15; x++)
+								- for (var x = 1; x < 17; x++)
 									+slide(x)
 						+e.slideDescr 
 							+e.small--mb Август 2020
@@ -34,16 +34,18 @@ mixin sAbout(data)
 									+pic('arrow-right')
 			+e.row.row
 				.col-lg-6.col-xl-5
-					+e.photoWrap(href=`img/@2x/photo1.jpg` data-fancybox="photo1") 
+					//- +e.photoWrap(href=`img/@2x/photo1.jpg` data-fancybox="photo2")
+					+e.photoWrap
 						+pic('photo1.jpg','','')
-						+e.slideDescr--sm 
+						+e.DIV.slideDescr--sm 
 							h4 СКИДКА 10%
 							p Ограниченное предложение! Акция только на&nbsp;2&nbsp;таунхауса под чистовую отделку.
 			+e.lastRow.row 
-				.col-lg-6 
-					+e.photoWrap--mt(href=`img/@2x/photo2.jpg` data-fancybox="photo2") 
-						+pic('photo2.jpg','','')
-						+e.slideDescr 
+				.col-lg-6
+					//- +e.photoWrap--mt(href=`img/@2x/photo2.png` data-fancybox="photo3")
+					+e.photoWrap--mt
+						+pic('photo2.png','','')
+						+e.DIV.slideDescr 
 							h4 РАССРОЧКА от&nbsp;застройщика
 							p Платите половину стоимости и&nbsp;остальные&nbsp;50% в&nbsp;течении 2-х месяцев.
 				.col-lg-6 
@@ -52,9 +54,9 @@ mixin sAbout(data)
 							.swiper-wrapper
 								mixin slide(i)
 									+e.slide.swiper-slide
-										a(href=`img/@2x/2-${i}.jpg` data-fancybox="photo1") 
-											+pic(`${i}.jpg`,'','')
-								- for (var x = 1; x < 15; x++)
+										a(href=`img/@2x/2-${i}.jpg` data-fancybox="photo4") 
+											+pic(`2-${i}.jpg`,'','')
+								- for (var x = 1; x < 11; x++)
 									+slide(x)
 						+e.slideDescr 
 							h4 Окружение 

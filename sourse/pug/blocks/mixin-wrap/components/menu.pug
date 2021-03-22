@@ -27,13 +27,13 @@ mixin mnu()
 mixin mnu()
 	-
 		var nav= {
-			"О посёлке":"#sContact",
-			"Генплан  ":"#",
-			"Таунхаусы ":"#",
-			"Фотогалерея ":"#",
-			"Как купить":"#",
-			"Расположение":"#",
-			"Контакты ":"#sContact"
+			"О посёлке":"#sAbout",
+			"Генплан  ":"#sPlan",
+			"Таунхаусы ":"#sPlaning",
+			"Фотогалерея ":"#sAbout",
+			"Как купить":"#sBy",
+			"Расположение":"#sMap",
+			"Контакты ":"#footer"
 			}
 	+b.UL.navMenu(itemscope itemtype="http://schema.org/SiteNavigationElement")&attributes(attributes)
 		each linkPatch, linkName in nav

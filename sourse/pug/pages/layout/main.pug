@@ -17,6 +17,21 @@ doctype html
 html(lang="ru")
 	head
 		meta(charset="utf-8")
+		// Google Tag Manager 
+		script.
+			(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+			new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+			j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+			'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+			})(window,document,'script','dataLayer','GTM-K33GNCX');
+		//- <script>
+		//- 	(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		//- 	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		//- 	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		//- 	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		//- 	})(window,document,'script','dataLayer','GTM-K33GNCX');
+		//- </script>
+		// End Google Tag Manager 
 
 		block title
 			title title
@@ -33,10 +48,14 @@ html(lang="ru")
 	//- 	.loaded_hiding {  opacity: 0; pointer-events: none;  } .loaded_hiding::before { display: none; }
 	//- body.loaded_hiding(class= mainPage) 
 	body(class= mainPage data-bg= bg)
+		// Google Tag Manager (noscript) 
+		noscript
+			iframe(src='https://www.googletagmanager.com/ns.html?id=GTM-K33GNCX' height='0' width='0' style='display:none;visibility:hidden')
+
+		// End Google Tag Manager (noscript) 
 		.main-wrapper
 			block pagecontent
 				h3 content
 		+modal()
 		+allcjs()
-		
 		

@@ -28,9 +28,15 @@
 		}
 
 		path {
+			cursor: pointer;
+			outline: none;
 			@include mt;
-			&:hover {
+			&:focus {
 				fill: #fff;
+			}
+
+			&:hover {
+				opacity: .3;
 			}
 		}
 	}

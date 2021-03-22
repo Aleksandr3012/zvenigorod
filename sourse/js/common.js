@@ -226,7 +226,7 @@ const JSCCommon = {
 
 		$(document).on('click', " .top-nav li a, .scroll-link", function () {
 			const elementClick = $(this).attr("href");
-			const destination = $(elementClick).offset().top;
+			const destination = $(elementClick).offset().top-60;
 
 			$('html, body').animate({ scrollTop: destination }, 1100);
 
@@ -303,7 +303,12 @@ function eventHandler() {
 	}
 
 	const swiper4 = new Swiper('.headerBlock__slider--js', {
-		direction: 'vertical',
+		loop: true,
+		breakpoints: {
+			992: {
+				direction: 'vertical'
+			}
+		},
 		pagination: {
 			el: '.headerBlock .swiper-pagination',
 			clickable: true,
@@ -350,20 +355,6 @@ function eventHandler() {
 	const swiper3 = new Swiper('.sPlaning .sPlaning__slider--js', {
 		...defaultSl,
 		slidesPerView: 1,
-		breakpoints: {
-			// when window width is >= 320px
-			576: {
-				slidesPerView: 2,
-				spaceBetween: 20
-			},
-			// when window width is >= 480px
-
-			// when window width is >= 640px
-			992: {
-				slidesPerView: 3,
-				spaceBetween: 40
-			}
-		},
 		pagination: {
 			el: '.sPlaning .swiper-pagination',
 			type: 'fraction',
@@ -420,7 +411,7 @@ function eventHandler() {
 			<div class="popover-body"></div>
 			${popoverInner}`,
 			container: '#map',
-			trigger: 'click',
+			trigger: 'focus',
 			placement: 'auto',
 		})
 		

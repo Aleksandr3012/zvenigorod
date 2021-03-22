@@ -235,7 +235,7 @@ var JSCCommon = {
 	animateScroll: function animateScroll() {
 		$(document).on('click', " .top-nav li a, .scroll-link", function () {
 			var elementClick = $(this).attr("href");
-			var destination = $(elementClick).offset().top;
+			var destination = $(elementClick).offset().top - 60;
 			$('html, body').animate({
 				scrollTop: destination
 			}, 1100);
@@ -304,7 +304,12 @@ function eventHandler() {
 
 	}), _defaultSl);
 	var swiper4 = new Swiper('.headerBlock__slider--js', {
-		direction: 'vertical',
+		loop: true,
+		breakpoints: {
+			992: {
+				direction: 'vertical'
+			}
+		},
 		pagination: {
 			el: '.headerBlock .swiper-pagination',
 			clickable: true // renderBullet: function (index, className) {
@@ -345,19 +350,6 @@ function eventHandler() {
 	}));
 	var swiper3 = new Swiper('.sPlaning .sPlaning__slider--js', _objectSpread(_objectSpread({}, defaultSl), {}, {
 		slidesPerView: 1,
-		breakpoints: {
-			// when window width is >= 320px
-			576: {
-				slidesPerView: 2,
-				spaceBetween: 20
-			},
-			// when window width is >= 480px
-			// when window width is >= 640px
-			992: {
-				slidesPerView: 3,
-				spaceBetween: 40
-			}
-		},
 		pagination: {
 			el: '.sPlaning .swiper-pagination',
 			type: 'fraction',
@@ -384,7 +376,7 @@ function eventHandler() {
 		return new bootstrap.Popover(popoverTriggerEl, {
 			template: "<div class=\"popover\" role=\"tooltip\">\n\t\t\t<h3 class=\"popover-header\"></h3>\n\t\t\t<div class=\"popover-body\"></div>\n\t\t\t".concat(popoverInner),
 			container: '#map',
-			trigger: 'click',
+			trigger: 'focus',
 			placement: 'auto'
 		});
 	});
