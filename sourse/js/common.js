@@ -381,9 +381,9 @@ function eventHandler() {
 	var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
 	var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
 		let popover= {
-			t1: popoverTriggerEl.dataset.t1,
-			t2: popoverTriggerEl.dataset.t2,
-			t3: popoverTriggerEl.dataset.t3,
+			status: popoverTriggerEl.dataset.status,
+			square: popoverTriggerEl.dataset.square,
+			area: popoverTriggerEl.dataset.area,
 			price: popoverTriggerEl.dataset.price,
 			title: popoverTriggerEl.dataset.title,
 		}
@@ -395,15 +395,15 @@ function eventHandler() {
 			<div class="sPlan__table">
 				<div class="sPlan__tr">
 					<div class="sPlan__td">Статус</div>
-					<div class="sPlan__td">${popover.t1}</div>
+					<div class="sPlan__td">${popover.status}</div>
 				</div>
 				<div class="sPlan__tr">
 					<div class="sPlan__td">Площадь</div>
-					<div class="sPlan__td">${popover.t2}</div>
+					<div class="sPlan__td">${popover.square}</div>
 				</div>
 				<div class="sPlan__tr">
 					<div class="sPlan__td">Участок</div>
-					<div class="sPlan__td">${popover.t3}</div>
+					<div class="sPlan__td">${popover.area}</div>
 				</div>
 				<div class="sPlan__tr">
 					<div class="sPlan__td">Цена</div>
