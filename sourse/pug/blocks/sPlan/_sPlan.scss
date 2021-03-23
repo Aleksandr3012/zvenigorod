@@ -12,7 +12,17 @@
 	}
 
 	&__mapWrap {
+		@include media-breakpoint-down(lg) {
+			overflow-x: auto;
+			overflow-y: hidden;
+		}
+	}
+
+	&__map {
 		position: relative;
+		@include media-breakpoint-down(lg) {
+			min-width: 930px;
+		}
 	}
 
 	&__svg {
@@ -43,16 +53,22 @@
 
 	&__descr {
 		position: absolute;
-		right: 0;
-		padding: rem(15);
-		bottom: -50px;
-		@include media-breakpoint-up(md) {
-			bottom: 0;
+		padding: rem(15) rem(15) rem(5);
+		bottom: 0;
+		@include media-breakpoint-down(lg) {
+			left: 0;
+		}
+
+		@include media-breakpoint-up(lg) {
+			right: 0;
 			padding: rem(35) rem(0) rem(13) rem(31);
 		}
 		background-color: #fff;
 		z-index: 10;
-		max-width: 481px;
+		max-width: 200px;
+		@include media-breakpoint-up(md) {
+			max-width: 481px;
+		}
 	}
 
 	&__color {
@@ -105,6 +121,20 @@
 		padding: rem(15) rem(21) rem(21);
 		background-color: #fff;
 		max-width: 281px;
+		position: relative;
+	}
+
+	&__hide {
+		position: absolute;
+		top: 5px;
+		right: 7px;
+		line-height: 1;
+		transform: rotate(45deg);
+		@extend .mono;
+		font-weight: bold;
+		font-size: rem(20);
+		cursor: pointer;
+		// user-select:none;
 	}
 	
 	&__btn {

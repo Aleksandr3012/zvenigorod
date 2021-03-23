@@ -58,7 +58,7 @@ var JSCCommon = {
 					}
 
 					setValue(data.title, '[name="homeTitle"]');
-					setValue(data.mainTitle, '.form-wrap__title'); // setValue(data.text, '.after-headline');
+					setValue(data.mainTitle, '.form-wrap__title, [name="type"]'); // setValue(data.text, '.after-headline');
 					// setValue(data.btn, '.btn');
 					// setValue(data.order, '.order');
 				});
@@ -384,10 +384,12 @@ function eventHandler() {
 			subtitle: popoverTriggerEl.dataset.subtitle,
 			numb: popoverTriggerEl.dataset.numb
 		};
-		var popoverInner = "\n\t\t<div class=\"sPlan__popover\">\n\n\t\t\t<div class=\"sPlan__hide\">x</div>\n\t\t\t<div class=\"sPlan__numb hidden \">".concat(popover.numb, " </div>\n\t\t\t<div class=\"sPlan__title \">").concat(popover.title, " </div>\n\t\t\t<div class=\"sPlan__subtitle\">").concat(popover.subtitle, "</div>\n\t\t\t<div class=\"sPlan__table\">\n\t\t\t\t<div class=\"sPlan__tr\">\n\t\t\t\t\t<div class=\"sPlan__td\">\u0421\u0442\u0430\u0442\u0443\u0441</div>\n\t\t\t\t\t<div class=\"sPlan__td\">").concat(popover.status, "</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"sPlan__tr\">\n\t\t\t\t\t<div class=\"sPlan__td\">\u041F\u043B\u043E\u0449\u0430\u0434\u044C</div>\n\t\t\t\t\t<div class=\"sPlan__td\">").concat(popover.square, "</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"sPlan__tr\">\n\t\t\t\t\t<div class=\"sPlan__td\">\u0423\u0447\u0430\u0441\u0442\u043E\u043A</div>\n\t\t\t\t\t<div class=\"sPlan__td\">").concat(popover.area, "</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"sPlan__tr\">\n\t\t\t\t\t<div class=\"sPlan__td\">\u0426\u0435\u043D\u0430</div>\n\t\t\t\t\t<div class=\"sPlan__td sPlan__price\">").concat(popover.price, "</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<a class=\"sPlan__btn\" href=\"#modal-call\" >\u0417\u0430\u043F\u0438\u0441\u0430\u0442\u044C\u0441\u044F \u043D\u0430 \u043F\u0440\u043E\u0441\u043C\u043E\u0442\u0440</a>\n\t\t</div>");
+		var popoverInner = "\n\t\t<div class=\"sPlan__popover\">\n\n\t\t\t<span class=\"sPlan__hide hidden\">+</span>\n\t\t\t<div class=\"sPlan__numb hidden \">".concat(popover.numb, " </div>\n\t\t\t<div class=\"sPlan__title \">").concat(popover.title, " </div>\n\t\t\t<div class=\"sPlan__subtitle\">").concat(popover.subtitle, "</div>\n\t\t\t<div class=\"sPlan__table\">\n\t\t\t\t<div class=\"sPlan__tr\">\n\t\t\t\t\t<div class=\"sPlan__td\">\u0421\u0442\u0430\u0442\u0443\u0441</div>\n\t\t\t\t\t<div class=\"sPlan__td\">").concat(popover.status, "</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"sPlan__tr\">\n\t\t\t\t\t<div class=\"sPlan__td\">\u041F\u043B\u043E\u0449\u0430\u0434\u044C</div>\n\t\t\t\t\t<div class=\"sPlan__td\">").concat(popover.square, "</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"sPlan__tr\">\n\t\t\t\t\t<div class=\"sPlan__td\">\u0423\u0447\u0430\u0441\u0442\u043E\u043A</div>\n\t\t\t\t\t<div class=\"sPlan__td\">").concat(popover.area, "</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"sPlan__tr\">\n\t\t\t\t\t<div class=\"sPlan__td\">\u0426\u0435\u043D\u0430</div>\n\t\t\t\t\t<div class=\"sPlan__td sPlan__price\">").concat(popover.price, "</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<a class=\"sPlan__btn\" href=\"#modal-call\" data-main-title=\"\u0417\u0430\u043F\u0438\u0441\u0430\u0442\u044C\u0441\u044F \u043D\u0430 \u043F\u0440\u043E\u0441\u043C\u043E\u0442\u0440\">\u0417\u0430\u043F\u0438\u0441\u0430\u0442\u044C\u0441\u044F \u043D\u0430 \u043F\u0440\u043E\u0441\u043C\u043E\u0442\u0440</a>\n\t\t</div>");
 		popoverTriggerEl.addEventListener('show.bs.popover', function () {
-			// popoverTriggerEl.hide();
 			$('.popover').hide();
+		});
+		popoverTriggerEl.addEventListener('hidden.bs.popover', function () {
+			$('.sPlan__hide').hide();
 		});
 		return new bootstrap.Popover(popoverTriggerEl, {
 			template: "<div class=\"popover\" role=\"tooltip\">\n\t\t\t<h3 class=\"popover-header\"></h3>\n\t\t\t<div class=\"popover-body\"></div>\n\t\t\t".concat(popoverInner),

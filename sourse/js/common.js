@@ -55,7 +55,7 @@ const JSCCommon = {
 						}
 					}
 					setValue(data.title, '[name="homeTitle"]');
-					setValue(data.mainTitle, '.form-wrap__title');
+					setValue(data.mainTitle, '.form-wrap__title, [name="type"]');
 					// setValue(data.text, '.after-headline');
 					// setValue(data.btn, '.btn');
 					// setValue(data.order, '.order');
@@ -398,7 +398,7 @@ function eventHandler() {
 		let popoverInner= `
 		<div class="sPlan__popover">
 
-			<div class="sPlan__hide">x</div>
+			<span class="sPlan__hide hidden">+</span>
 			<div class="sPlan__numb hidden ">${popover.numb} </div>
 			<div class="sPlan__title ">${popover.title} </div>
 			<div class="sPlan__subtitle">${popover.subtitle}</div>
@@ -420,12 +420,15 @@ function eventHandler() {
 					<div class="sPlan__td sPlan__price">${popover.price}</div>
 				</div>
 			</div>
-			<a class="sPlan__btn" href="#modal-call" >Записаться на просмотр</a>
+			<a class="sPlan__btn" href="#modal-call" data-main-title="Записаться на просмотр">Записаться на просмотр</a>
 		</div>`
 
 		popoverTriggerEl.addEventListener('show.bs.popover', function () {
-			// popoverTriggerEl.hide();
 			$('.popover').hide();
+		})
+		
+		popoverTriggerEl.addEventListener('hidden.bs.popover', function () {
+			$('.sPlan__hide').hide();
 		})
 		
 		return new bootstrap.Popover(popoverTriggerEl, {
