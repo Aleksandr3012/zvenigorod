@@ -57,10 +57,9 @@ var JSCCommon = {
 						}
 					}
 
-					setValue(data.title, '.ttu');
-					setValue(data.text, '.after-headline');
-					setValue(data.btn, '.btn');
-					setValue(data.order, '.order');
+					setValue(data.title, '[name="homeTitle"]'); // setValue(data.text, '.after-headline');
+					// setValue(data.btn, '.btn');
+					// setValue(data.order, '.order');
 				});
 			});
 		}

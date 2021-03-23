@@ -6,7 +6,7 @@
 	--sPT: #{rem(25)};
 	--sPB: #{rem(25)};
 	@include media-breakpoint-up(md) {
-		--sPT: #{rem(55)};
+		--sPT: #{rem(50)};
 		--sPB: #{rem(50)};
 	}
 	max-width: rem(920);
@@ -20,12 +20,6 @@
 	@include media-breakpoint-up(md) {
 		padding-left: rem(68);
 		padding-right: rem(68);
-	}
-
-	.row {
-		@include media-breakpoint-up(lg) {
-			@include roww(94px);
-		}
 	}
 
 	&__title {

@@ -54,10 +54,10 @@ const JSCCommon = {
 							// console.log(modal.querySelector(elem).tagName)
 						}
 					}
-					setValue(data.title, '.ttu');
-					setValue(data.text, '.after-headline');
-					setValue(data.btn, '.btn');
-					setValue(data.order, '.order');
+					setValue(data.title, '[name="homeTitle"]');
+					// setValue(data.text, '.after-headline');
+					// setValue(data.btn, '.btn');
+					// setValue(data.order, '.order');
 				})
 			})
 		}
@@ -258,7 +258,6 @@ function eventHandler() {
 	if (screenName && x.includes("localhost:30")) {
 		document.body.insertAdjacentHTML("beforeend", `<div class="pixel-perfect" style="background-image: url(screen/${screenName});"></div>`);
 	}
-
 
 
 	function whenResize() {

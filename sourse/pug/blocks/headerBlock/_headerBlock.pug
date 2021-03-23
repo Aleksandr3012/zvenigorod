@@ -1,7 +1,10 @@
 mixin headerBlock()
 	// start headerBlock
 	+b.headerBlock#headerBlock&attributes(attributes)
-
+		+e.textWrap
+			.container
+					+b.section-title
+						h1 Закрытый посёлок всего 22 таунхауса
 		+e.slider--js.swiper-container
 			.swiper-wrapper
 				mixin slide(i,t, h1)
@@ -10,12 +13,8 @@ mixin headerBlock()
 						.container
 							.row.align-items-center
 								.col-md
-									+b.section-title
-										if h1
-											h1 Закрытый посёлок всего 22 таунхауса
-										else 
-											.h1 Закрытый посёлок всего 22 таунхауса
-								.col-md-auto.d-none.d-md-block 
+					
+								.col-md-auto.d-none.d-lg-block 
 									+e.numb= i 
 										| /
 										span 4
@@ -23,8 +22,8 @@ mixin headerBlock()
 				+slide('2','Lorem ipsum dolor sit amet consectetur')
 				+slide('3','Lorem ipsum dolor sit amet consectetur')
 				+slide('4','','h1')
-			.swiper-pagination
-				
+		.swiper-pagination
+		
 
 
 	// end headerBlock

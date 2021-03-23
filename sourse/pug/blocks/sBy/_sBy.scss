@@ -12,14 +12,10 @@
 	}
 
 	&__tableWrap {
-		@include media-breakpoint-down(sm) {
-			overflow-x: scroll;
-		}
 		margin-bottom: rem(83);
 	}
 
 	table {
-		min-width: 500px;
 		width: 100%;
 		position: relative;
 		font-size: $xsmall;
@@ -28,6 +24,9 @@
 		}
 
 		thead {
+			@include media-breakpoint-down(sm) {
+				display: none;
+			}
 			color: #c7c7c7;
 			td {
 				padding-bottom: rem(10);
@@ -43,7 +42,19 @@
 			display: block;
 		}
 
+		td {
+			&::before {
+				content: attr(aria–label);
+				float: left;
+			}
+			@include media-breakpoint-down(sm) {
+				display: block;
+				padding: rem(5) rem(10);
+			}
+		}
+
 		tr {
+			
 			&:nth-child(even) {
 				position: relative;
 				background-color: #f1f1f1;
