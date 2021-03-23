@@ -397,6 +397,8 @@ function eventHandler() {
 
 		let popoverInner= `
 		<div class="sPlan__popover">
+
+			<div class="sPlan__hide">x</div>
 			<div class="sPlan__numb hidden ">${popover.numb} </div>
 			<div class="sPlan__title ">${popover.title} </div>
 			<div class="sPlan__subtitle">${popover.subtitle}</div>
@@ -421,6 +423,10 @@ function eventHandler() {
 			<a class="sPlan__btn" href="#modal-call" >Записаться на просмотр</a>
 		</div>`
 
+		popoverTriggerEl.addEventListener('show.bs.popover', function () {
+			// popoverTriggerEl.hide();
+			$('.popover').hide();
+		})
 		
 		return new bootstrap.Popover(popoverTriggerEl, {
 			template: `<div class="popover" role="tooltip">
@@ -431,7 +437,6 @@ function eventHandler() {
 			// trigger: 'focus',
 			placement: 'auto',
 		})
-		
 	})
 
 	$(document).on('click', '.sPlan__btn',function() {
