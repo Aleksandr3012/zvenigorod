@@ -46,9 +46,6 @@
 		}
 
 		td {
-			&::before {
-				content: attr(data-title);
-			}
 			@include media-breakpoint-down(sm) {
 				display: flex;
 				justify-content: space-between;
@@ -56,6 +53,10 @@
 				padding: rem(5) rem(10);
 				text-align: right;
 				border-bottom: 1px solid #b6b6b6;
+				&::before {
+
+					content: attr(data-title);
+				}
 			}
 		}
 
