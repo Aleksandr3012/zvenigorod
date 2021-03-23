@@ -40,8 +40,9 @@
 		}
 		height: 400px;
 
-		> ymaps {
+		> ymaps, iframe, > div {
 			height: 100% !important;
+			width: 100%;
 		}
 	}
 	

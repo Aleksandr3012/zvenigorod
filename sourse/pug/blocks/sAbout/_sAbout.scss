@@ -47,6 +47,7 @@
 	}
 
 	&__slide {
+		height: auto;
 		a, picture {
 			display: block;
 			height: 100%;
@@ -63,32 +64,49 @@
 		font-size: $small;
 
 		&--mb {
-			margin-bottom: rem(20);
+			margin-bottom: rem(5);
+			@include media-breakpoint-up(md) {
+				margin-bottom: rem(20);
+			}
 		}
 	}
 
 	&__slideDescr {
-		position: absolute;
-		bottom: 0;
-		left: 0;
 		z-index: 10;
 		background-color: #fff;
-		padding: rem(29) rem(29) rem(15);
+		padding: rem(10);
+		@include media-breakpoint-down(md) {
+			margin-bottom: rem(20);
+		}
+		@include media-breakpoint-up(md) {
+			padding: rem(29) rem(29) rem(15);
+			position: absolute;
+			bottom: 0;
+			left: 0;
+		}
 		@include media-breakpoint-up(xl) {
 			width: 380px;
 		}
 
 		p {
 			max-width: rem(220);
+			@include media-breakpoint-down(md) {
+				margin-bottom: rem(5);
+			}
 		}
 		
 		h4 {
-			margin-bottom:  rem(48);
+			margin-bottom: rem(10);
+			@include media-breakpoint-up(md) {
+				margin-bottom:  rem(48);
+			}
 			@extend .mono;
 		}
 
 		&--sm {
-			padding: rem(25) rem(23) rem(5);
+			@include media-breakpoint-up(md) {
+				padding: rem(25) rem(23) rem(5);
+			}
 			@include media-breakpoint-up(xl) {
 				width: 290px;
 			}
@@ -133,7 +151,9 @@
 		}
 
 		h4 {
-			margin-bottom: rem(34);
+			@include media-breakpoint-up(md) {
+				margin-bottom: rem(34);
+			}
 		}
 
 		&--mt {

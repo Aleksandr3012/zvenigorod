@@ -12,9 +12,10 @@ $mail->CharSet = 'utf-8';
 ///who send 
 $mail->setFrom('info@info.com','info info');
 
- $mail->addAddress('wol1414@gmail.com');
- // $mail->addAddress('horenkova369@gmail.com');
-// $mail->addAddress('stab@inbox.support');
+//  $mail->addAddress('wol1414@gmail.com');
+ $mail->addAddress('fleming3012@gmail.com');
+//  $mail->addAddress('zvenposad@gmail.com');
+
 
 
 

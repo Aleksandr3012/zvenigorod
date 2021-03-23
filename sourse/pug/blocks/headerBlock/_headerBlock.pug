@@ -3,27 +3,27 @@ mixin headerBlock()
 	+b.headerBlock#headerBlock&attributes(attributes)
 		+e.textWrap
 			.container
-					+b.section-title
-						h1 Закрытый посёлок всего 22 таунхауса
+				.row.align-items-center
+					.col-md
+						+b.section-title
+							h1 Закрытый посёлок всего 22 таунхауса
+					.col-md-auto.d-none.d-lg-block 
+						+e.numb
+							span / 4
+							+e.count 1
+
 		+e.slider--js.swiper-container
 			.swiper-wrapper
 				mixin slide(i,t, h1)
 					+e.slide.section.swiper-slide
 						+pic(`${i}.jpg`)(class='picture-bg')
-						.container
-							.row.align-items-center
-								.col-md
-					
-								.col-md-auto.d-none.d-lg-block 
-									+e.numb= i 
-										| /
-										span 4
-				+slide('1','Lorem ipsum dolor sit amet consectetur')
-				+slide('2','Lorem ipsum dolor sit amet consectetur')
-				+slide('3','Lorem ipsum dolor sit amet consectetur')
+				+slide('1')
+				+slide('2')
+				+slide('3')
 				+slide('4','','h1')
 		.swiper-pagination
-		
+		+e.socWrap 
+			+soc
 
 
 	// end headerBlock

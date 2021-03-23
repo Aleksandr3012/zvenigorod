@@ -24,6 +24,11 @@
 			margin-bottom: rem(17);
 		}
 
+		@include media-breakpoint-down(sm) {
+			margin-left: rem(5);
+			margin-right: rem(5);
+		}
+
 		span {
 			font-size: $h4-font-size;
 			font-weight: bold;

@@ -228,7 +228,7 @@ const JSCCommon = {
 			const elementClick = $(this).attr("href");
 			const destination = $(elementClick).offset().top-60;
 
-			$('html, body').animate({ scrollTop: destination }, 1100);
+			$('html, body').animate({ scrollTop: destination }, 0);
 
 			return false;
 		});
@@ -301,13 +301,9 @@ function eventHandler() {
 		},
 	}
 
+
 	const swiper4 = new Swiper('.headerBlock__slider--js', {
 		loop: true,
-		breakpoints: {
-			992: {
-				direction: 'vertical'
-			}
-		},
 		pagination: {
 			el: '.headerBlock .swiper-pagination',
 			clickable: true,
@@ -315,7 +311,25 @@ function eventHandler() {
 			// 	return '<span class="' + className + '">' + (index + 1) + '</span>';
 			// }
 		},
+		on: {
+			realIndexChange: function (swiper) {
+				photos_change(swiper4);
+			},
+		}
 	});
+
+
+	var counter = $('.headerBlock .headerBlock__numb');
+	var currentCount = $('.headerBlock__count'); 
+
+	function photos_change(swiper) {
+
+		var index = swiper.activeIndex,
+				$current = $(".headerBlock__slide").eq(index),
+				dur = 0.8;
+
+		currentCount.text(index);
+	}
 
 	const swiper1 = new Swiper('.sAbout__sliderWrap--firstSlider .sAbout__slider--js', {
 		...defaultSl,
@@ -376,12 +390,15 @@ function eventHandler() {
 			area: popoverTriggerEl.dataset.area,
 			price: popoverTriggerEl.dataset.price,
 			title: popoverTriggerEl.dataset.title,
+			subtitle: popoverTriggerEl.dataset.subtitle,
+			numb: popoverTriggerEl.dataset.numb,
 		}
 
 		let popoverInner= `
 		<div class="sPlan__popover">
+			<div class="sPlan__numb hidden ">${popover.numb} </div>
 			<div class="sPlan__title ">${popover.title} </div>
-			<div class="sPlan__subtitle">внутренний гараж парковочное место</div>
+			<div class="sPlan__subtitle">${popover.subtitle}</div>
 			<div class="sPlan__table">
 				<div class="sPlan__tr">
 					<div class="sPlan__td">Статус</div>
@@ -419,8 +436,10 @@ function eventHandler() {
 	$(document).on('click', '.sPlan__btn',function() {
 		let homeTitle = $(this).parents('.sPlan__popover').find('.sPlan__title').text();
 		let homePrice = $(this).parents('.sPlan__popover').find('.sPlan__price').text();
+		let homeNumb = $(this).parents('.sPlan__popover').find('.sPlan__numb').text();
 		$('#modal-call').find('[name="homeTitle"]').val(homeTitle);
 		$('#modal-call').find('[name="homePrice"]').val(homePrice);
+		$('#modal-call').find('[name="homeNumb"]').val(homeNumb);
 		$.fancybox.open({
 				type: 'inline',
 				src: '#modal-call'
