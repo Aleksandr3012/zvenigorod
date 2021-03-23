@@ -66,6 +66,10 @@
 		@include media-breakpoint-up(md) {
 			margin-bottom: rem(25);
 		}
+
+		&--title {
+			margin-bottom: rem(25);
+		}
 	}
 
 	&__slideDescr {
