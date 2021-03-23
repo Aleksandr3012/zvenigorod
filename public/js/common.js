@@ -303,7 +303,7 @@ function eventHandler() {
 
 	}), _defaultSl);
 	var swiper4 = new Swiper('.headerBlock__slider--js', {
-		loop: true,
+		// loop: true,
 		pagination: {
 			el: '.headerBlock .swiper-pagination',
 			clickable: true // renderBullet: function (index, className) {
@@ -321,7 +321,7 @@ function eventHandler() {
 	var currentCount = $('.headerBlock__count');
 
 	function photos_change(swiper) {
-		var index = swiper.activeIndex,
+		var index = swiper.activeIndex + 1,
 				$current = $(".headerBlock__slide").eq(index),
 				dur = 0.8;
 		currentCount.text(index);

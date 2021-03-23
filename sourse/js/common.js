@@ -303,7 +303,7 @@ function eventHandler() {
 
 
 	const swiper4 = new Swiper('.headerBlock__slider--js', {
-		loop: true,
+		// loop: true,
 		pagination: {
 			el: '.headerBlock .swiper-pagination',
 			clickable: true,
@@ -324,7 +324,7 @@ function eventHandler() {
 
 	function photos_change(swiper) {
 
-		var index = swiper.activeIndex,
+		var index = swiper.activeIndex + 1,
 				$current = $(".headerBlock__slide").eq(index),
 				dur = 0.8;
 
