@@ -18,7 +18,10 @@
 	table {
 		width: 100%;
 		position: relative;
-		font-size: $xsmall;
+
+		@include media-breakpoint-up(sm) {
+			font-size: $xsmall;
+		}
 		@include media-breakpoint-up(xl) {
 			margin-left: rem(-26);
 		}
@@ -44,36 +47,30 @@
 
 		td {
 			&::before {
-				content: attr(aria–label);
-				float: left;
+				content: attr(data-title);
 			}
 			@include media-breakpoint-down(sm) {
-				display: block;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
 				padding: rem(5) rem(10);
+				text-align: right;
+				border-bottom: 1px solid #b6b6b6;
 			}
 		}
 
 		tr {
+
+			@include media-breakpoint-down(sm) {
+				display: block;
+			}
 			
 			&:nth-child(even) {
 				position: relative;
 				background-color: #f1f1f1;
-				// &::before {
-				// 	content: '';
-				// 	position: absolute;
-				// 	z-index: -1;
-				// 	right: 0;
-				// 	top: 0;
-				// 	width: calc(100% + 15px);
-				// 	height: 100%;
-				// 	background-color: #f1f1f1;
-
-				// }
 			}
 		}
 	}
-
-
 
 
 

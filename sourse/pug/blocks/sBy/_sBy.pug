@@ -16,15 +16,17 @@ mixin sBy(data)
 					tbody 
 						mixin tr(i,pr,rate,price,year,age)
 							tr 
-								td(aria-label='банк') 
+								td(data-title="банк") 
 									+pic(`bank-${i}.png`,'','')
-								td(aria-label='ставка') 
-									strong= pr 
-									span= rate
-								td(aria-label='сумма') 
-									strong= price 
-									span= year
-								td(aria-label='требования')!= age
+								td(data-title="ставка") 
+									div
+										strong= pr 
+										span= rate
+								td(data-title="сумма") 
+									div
+										strong= price 
+										span= year
+								td(data-title="требования")!= age
 						+tr('1','5%','«Объекты на балансе»','400 000  - 30 000 000 руб ',`На срок до 25 лет`,`Возраст от 21 года<br>Стаж от 6 месяцев / 3 документа`)
 						+tr('2','7.8%','«Новоселы»','10 000 000  - 60 000 000 руб',`На срок до 30 лет`,`Возраст от 20 лет<br>Стаж от 6 месяцев /3 документа`)
 						+tr('3','9.29%','«На готовое жилье»','600 000  - 50 000 000 руб ',`На срок до 30 лет`,`Возраст от 20 лет<br>Стаж от 4 месяцев / 4 документа`)
