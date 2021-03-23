@@ -55,6 +55,7 @@ const JSCCommon = {
 						}
 					}
 					setValue(data.title, '[name="homeTitle"]');
+					setValue(data.mainTitle, '.form-wrap__title');
 					// setValue(data.text, '.after-headline');
 					// setValue(data.btn, '.btn');
 					// setValue(data.order, '.order');
@@ -445,8 +446,6 @@ function eventHandler() {
 				src: '#modal-call'
 			});
 	});
-
-	
 	// modal window
 
 };

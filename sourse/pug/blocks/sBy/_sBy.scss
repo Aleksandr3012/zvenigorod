@@ -84,7 +84,6 @@
 	}
 
 	&__btn {
-		@extend .btn;
 		@extend .btn-outline-dark;
 		@include media-breakpoint-up(lg) {
 			width: rem(290);

@@ -62,12 +62,9 @@
 
 	&__small {
 		font-size: $small;
-
-		&--mb {
-			margin-bottom: rem(5);
-			@include media-breakpoint-up(md) {
-				margin-bottom: rem(20);
-			}
+		margin-bottom: rem(5);
+		@include media-breakpoint-up(md) {
+			margin-bottom: rem(25);
 		}
 	}
 
@@ -165,7 +162,7 @@
 
 	&__row {
 		@include media-breakpoint-up(lg) {
-			margin-top: rem(-80);
+			margin-top: rem(-75);
 			margin-bottom: rem(-350);
 		}
 		@include media-breakpoint-up(xl) {
