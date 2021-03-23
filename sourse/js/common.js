@@ -427,8 +427,8 @@ function eventHandler() {
 			<h3 class="popover-header"></h3>
 			<div class="popover-body"></div>
 			${popoverInner}`,
-			container: '#map',
-			trigger: 'focus',
+			// container: '#map',
+			// trigger: 'focus',
 			placement: 'auto',
 		})
 		
