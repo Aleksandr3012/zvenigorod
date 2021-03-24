@@ -16,6 +16,12 @@ mixin modal()
 			+polite()
 			.text-center
 				+e.BUTTON.btn.btn.btn-outline-dark(type="submit")  Отправить
+
+	+b.modal-win(id="modal-thanks" class=" " style="display: none" )
+		+form-wrap
+			.text-center
+				+e.title.ttu Мы свяжемся с вами в ближайшее время
+
 	// #modal-call
 	
 	// end modals
