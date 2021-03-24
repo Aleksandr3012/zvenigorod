@@ -410,11 +410,11 @@ function eventHandler() {
 				</div>
 				<div class="sPlan__tr">
 					<div class="sPlan__td">Площадь</div>
-					<div class="sPlan__td">${popoverContent.square} м<sup>2</sup></div>
+					<div class="sPlan__td">${popoverContent.area} м<sup>2</sup></div>
 				</div>
 				<div class="sPlan__tr">
 					<div class="sPlan__td">Участок</div>
-					<div class="sPlan__td">${popoverContent.area} м<sup>2</sup></div>
+					<div class="sPlan__td">${popoverContent.square} м<sup>2</sup></div>
 				</div>
 				<div class="sPlan__tr">
 					<div class="sPlan__td">Цена</div>
