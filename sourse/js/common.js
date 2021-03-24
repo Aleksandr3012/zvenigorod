@@ -399,8 +399,8 @@ function eventHandler() {
 		<div class="sPlan__popover">
 
 			<span class="sPlan__hide hidden">+</span>
-			<div class="sPlan__numb hidden ">${popover.numb} </div>
-			<div class="sPlan__title ">${popover.title} </div>
+			<div class="sPlan__numb ">${popover.numb} </div>
+			<div class="sPlan__subtitle">${popover.title} </div>
 			<div class="sPlan__subtitle">${popover.subtitle}</div>
 			<div class="sPlan__table">
 				<div class="sPlan__tr">
@@ -409,11 +409,11 @@ function eventHandler() {
 				</div>
 				<div class="sPlan__tr">
 					<div class="sPlan__td">Площадь</div>
-					<div class="sPlan__td">${popover.square}</div>
+					<div class="sPlan__td">${popover.square} м<sup>2</sup></div>
 				</div>
 				<div class="sPlan__tr">
 					<div class="sPlan__td">Участок</div>
-					<div class="sPlan__td">${popover.area}</div>
+					<div class="sPlan__td">${popover.area} м<sup>2</sup></div>
 				</div>
 				<div class="sPlan__tr">
 					<div class="sPlan__td">Цена</div>

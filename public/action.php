@@ -26,6 +26,10 @@ $time = date('d.m.Y в H:i');
 $html = '
 
 <table style="width: 100%;">';
+    if (!empty($_POST['type'])) {
+        $html .= ' <tr style="background-color: #f8f8f8;">  <td style="padding: 10px; border: #e9e9e9 1px solid;">Вид формы:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['type'] . '</b></td></tr>';
+    }
+    
     if (!empty($_POST['order'])) {
         $html .= ' <tr style="background-color: #f8f8f8;">  <td style="padding: 10px; border: #e9e9e9 1px solid;">Вид формы:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['order'] . '</b></td></tr>';
     }
@@ -49,6 +53,19 @@ $html = '
     if (!empty($_POST['comment'])) {
         $html .= ' <tr style="background-color: #f8f8f8;"> <td style="padding: 10px; border: #e9e9e9 1px solid;"> Отзыв:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['comment'] . '</b></td>';
     }
+
+    if (!empty($_POST['homeTitle'])) {
+        $html .= ' <tr style="background-color: #f8f8f8;"> <td style="padding: 10px; border: #e9e9e9 1px solid;"> Название:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['homeTitle'] . '</b></td>';
+    }
+
+    if (!empty($_POST['homePrice'])) {
+        $html .= ' <tr style="background-color: #f8f8f8;"> <td style="padding: 10px; border: #e9e9e9 1px solid;"> Цена:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['homePrice'] . '</b></td>';
+    }
+
+    if (!empty($_POST['homeNumb'])) {
+        $html .= ' <tr style="background-color: #f8f8f8;"> <td style="padding: 10px; border: #e9e9e9 1px solid;"> Номер дома:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['homeNumb'] . '</b></td>';
+    }
+
 
     // if (!empty($_POST['tech'])) {
     //     $html .= ' <tr style="background-color: #f8f8f8;">  <td style="padding: 10px; border: #e9e9e9 1px solid;"> Техника:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . implode(", ",$_POST['tech']) . '</b></td></tr>';

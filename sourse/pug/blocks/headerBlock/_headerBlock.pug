@@ -17,10 +17,10 @@ mixin headerBlock()
 				mixin slide(i,t, h1)
 					+e.slide.section.swiper-slide
 						+pic(`${i}.jpg`)(class='picture-bg')
-				+slide('1')
 				+slide('2')
 				+slide('3')
-				+slide('4','','h1')
+				+slide('4')
+				+slide('1')
 		.swiper-pagination
 		+e.socWrap 
 			+soc
