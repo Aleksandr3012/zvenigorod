@@ -12,7 +12,7 @@ module.exports = function () {
 	$.gulp.task('img-responsive', async function () {
 		return $.gulp.src(src)
 			.pipe($.gp.newer(path + '/@1x'))
-			.pipe($.gp.responsive({
+			.pipe($.responsive({
 				'*': [{
 					// Produce @2x images
 					width: '100%', quality: 75, progressive: true, rename: { prefix: '@2x/', },

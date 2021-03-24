@@ -14,16 +14,14 @@ global.$ = {
 	gp: require('gulp-load-plugins')(),
 	browserSync: require('browser-sync').create(),
 	postcss: require('gulp-postcss'),
-	autoprefixer: require('autoprefixer'), 
+	autoprefixer: require('autoprefixer'),
 	postcssPresetEnv: require('postcss-preset-env'),
 	cssnano: require('cssnano'),
 	nested: require('postcss-nested'),
 	plumber: require('gulp-plumber'),
 	webpack: require('webpack-stream'),
+	responsive: require('@tigersway/gulp-responsive'),
 	
-	gulpAvif: require('gulp-avif'),
-	imagemin: require('gulp-imagemin'),
-	imageminAvif: require('imagemin-avif'),
 	path: {
 		tasks: require('./gulp/config/tasks.js'),
 	},
