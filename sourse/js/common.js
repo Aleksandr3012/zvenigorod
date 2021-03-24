@@ -425,11 +425,9 @@ function eventHandler() {
 
 		popoverTriggerEl.addEventListener('show.bs.popover', function () {
 			$('.popover').hide();
-		})
-		
-		popoverTriggerEl.addEventListener('hidden.bs.popover', function () {
 			$('.sPlan__hide').hide();
 		})
+		
 		
 		return new bootstrap.Popover(popoverTriggerEl, {
 			template: `<div class="popover" role="tooltip">
