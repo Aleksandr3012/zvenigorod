@@ -385,7 +385,7 @@ function eventHandler() {
 
 	var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
 	var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-		let popover= {
+		let popoverContent= {
 			status: popoverTriggerEl.dataset.status,
 			square: popoverTriggerEl.dataset.square,
 			area: popoverTriggerEl.dataset.area,
@@ -398,45 +398,68 @@ function eventHandler() {
 		let popoverInner= `
 		<div class="sPlan__popover">
 
-			<span class="sPlan__hide hidden">+</span>
-			<div class="sPlan__numb ">${popover.numb} </div>
-			<div class="sPlan__subtitle">${popover.title} </div>
-			<div class="sPlan__subtitle">${popover.subtitle}</div>
+			<span class="sPlan__hide">+</span>
+			<div class="sPlan__numb ">${popoverContent.numb} </div>
+			<div class="sPlan__subtitle">${popoverContent.title} </div>
+			<div class="sPlan__subtitle">${popoverContent.subtitle}</div>
 			<div class="sPlan__table">
 				<div class="sPlan__tr">
 					<div class="sPlan__td">Статус</div>
-					<div class="sPlan__td">${popover.status}</div>
+					<div class="sPlan__td">${popoverContent.status}</div>
 				</div>
 				<div class="sPlan__tr">
 					<div class="sPlan__td">Площадь</div>
-					<div class="sPlan__td">${popover.square} м<sup>2</sup></div>
+					<div class="sPlan__td">${popoverContent.square} м<sup>2</sup></div>
 				</div>
 				<div class="sPlan__tr">
 					<div class="sPlan__td">Участок</div>
-					<div class="sPlan__td">${popover.area} м<sup>2</sup></div>
+					<div class="sPlan__td">${popoverContent.area} м<sup>2</sup></div>
 				</div>
 				<div class="sPlan__tr">
 					<div class="sPlan__td">Цена</div>
-					<div class="sPlan__td sPlan__price">${popover.price}</div>
+					<div class="sPlan__td sPlan__price">${popoverContent.price} P</div>
 				</div>
 			</div>
 			<a class="sPlan__btn" href="#modal-call" data-main-title="Записаться на просмотр">Записаться на просмотр</a>
 		</div>`
 
-		popoverTriggerEl.addEventListener('show.bs.popover', function () {
-			$('.popover').hide();
-			$('.sPlan__hide').hide();
-		})
+
+
 		
-		
-		return new bootstrap.Popover(popoverTriggerEl, {
+
+		var popover =  new bootstrap.Popover(popoverTriggerEl, {
+			
 			template: `<div class="popover" role="tooltip">
 			<h3 class="popover-header"></h3>
 			<div class="popover-body"></div>
 			${popoverInner}`,
-			// container: '#map',
-			// trigger: 'focus',
+			container: '.sPlan',
+			trigger: 'manual',
 			placement: 'auto',
+			// offset: 0,
+		})
+
+		// var exampleTriggerEl = document.getElementById('example')
+
+		
+		popoverTriggerEl.addEventListener('mouseover', function () {
+
+			// var popoverTest = bootstrap.Popover.getInstance(popoverTriggerEl);
+
+			let popoverElement = this.getAttribute('aria-describedby');
+			$('[rel=popover]').not('#' + $(this).attr('id')).hide();
+			$(`.popover:not(#${popoverElement})`).remove();
+			popover.show();
+			let popoverId = document.querySelectorAll(`path:not([aria-describedby=${popoverElement}])`);
+			// console.log(popoverElement);
+			popoverId.forEach(function(ell){
+			})
+		})
+		document.querySelector('.sPlan').addEventListener('click', function (element) {
+			const btn = element.target.closest(`.sPlan__hide`);
+			if (!btn) return;
+			popover.hide();
+			
 		})
 	})
 
