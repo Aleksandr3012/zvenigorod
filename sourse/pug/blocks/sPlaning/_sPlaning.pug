@@ -13,20 +13,18 @@ mixin sPlaning(data)
 					
 			+e.slider--js.swiper-container
 				.swiper-wrapper
-					+e.slide.swiper-slide
-						+e.imgWrap(href='img/@2x/planing.png' data-fancybox="plan")
-							+pic('planing.png')
-						+e.btnWrap
-							+e.btn.link-modal(href="#modal-call" data-main-title="Записаться на просмотр") Записаться на просмотр 
-					+e.slide.swiper-slide
-						+e.imgWrap(href='img/@2x/planing.png' data-fancybox="plan")
-							+pic('planing.png')
-						+e.btnWrap
-							+e.btn.link-modal(href="#modal-call" data-main-title="Записаться на просмотр") Записаться на просмотр 
-					+e.slide.swiper-slide
-						+e.imgWrap(href='img/@2x/planing.png' data-fancybox="plan")
-							+pic('planing.png')
-						+e.btnWrap
-							+e.btn.link-modal(href="#modal-call" data-main-title="Записаться на просмотр") Записаться на просмотр 
-
+					mixin item(i)
+						+e.slide.swiper-slide
+							+e.imgWrap(href=`img/@2x/${i}` data-fancybox="plan")
+								+pic(`${i}`)
+							+e.btnWrap
+								+e.btn.link-modal(href="#modal-call" data-main-title="Записаться на просмотр") Записаться на просмотр 
+					+item("planing.png")
+					+item("a.png")
+					+item("b.png")
+					+item("d.png")
+					+item("e.png")
+					+item("g.png")
+					+item("v.png")
+				 
 	// end sPlaning
