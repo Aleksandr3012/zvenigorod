@@ -21,7 +21,7 @@ global.$ = {
 	plumber: require('gulp-plumber'),
 	webpack: require('webpack-stream'),
 	responsive: require('@tigersway/gulp-responsive'),
-	
+	resizer: require('gulp-images-resizer'),
 	path: {
 		tasks: require('./gulp/config/tasks.js'),
 	},
@@ -33,7 +33,7 @@ $.path.tasks.forEach(function (taskPath) {
 });
 
 
-$.gulp.task('img', $.gulp.series('cleanimg', 'img-responsive'));
+$.gulp.task('img', $.gulp.series('cleanimg', 'img-responsive', 'img1x'));
 $.gulp.task('libs', $.gulp.series('cleanlibs', 'copylibs'));
 
 $.gulp.task('default', $.gulp.series('svg', 'svgCopy',
