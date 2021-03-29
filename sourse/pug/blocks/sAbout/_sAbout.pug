@@ -36,7 +36,7 @@ mixin sAbout(data)
 				.col-lg-6.col-xl-5
 					//- +e.photoWrap(href=`img/@2x/photo1.jpg` data-fancybox="photo2")
 					+e.photoWrap
-						+pic('photo1.jpg')
+						+pic('photo1.jpg','','')
 						+e.DIV.slideDescr--sm 
 							+e.saleWrap
 								+e.sale 10%
@@ -46,7 +46,7 @@ mixin sAbout(data)
 				.col-lg-6
 					//- +e.photoWrap--mt(href=`img/@2x/photo2.png` data-fancybox="photo3")
 					+e.photoWrap--mt
-						+pic('photo2.png')
+						+pic('photo2.png','','')
 						+e.DIV.slideDescr 
 							h4 РАССРОЧКА от&nbsp;застройщика
 							p Платите половину стоимости и&nbsp;остальные&nbsp;50% в&nbsp;течении 2-х месяцев.
