@@ -2,8 +2,8 @@ mixin sAbout(data)
 	// start sAbout
 	+b.SECTION.sAbout.section#sAbout&attributes(attributes)
 		.container
-			
-				
+
+
 			+e.firstRow.row
 				.col-lg-6
 					+e.small--title Посёлок таунхаусов “Звенигородский посад”
@@ -24,7 +24,7 @@ mixin sAbout(data)
 								- for (var x = 1; x < 17; x++)
 									+slide(x)
 						+e.slideDescr 
-							+e.small--mb Август 2020
+							//- +e.small--mb Август 2020
 							h4 Фотогалерея 
 							+e.navWrap
 								.swiper-button-hand.swiper-button-hand-prev.swiper-button-prev
@@ -38,6 +38,8 @@ mixin sAbout(data)
 					+e.photoWrap
 						+pic('photo1.jpg','','')
 						+e.DIV.slideDescr--sm 
+							+e.saleWrap
+								+e.sale 10%
 							h4 СКИДКА 10%
 							p Ограниченное предложение! Акция только на&nbsp;2&nbsp;таунхауса под чистовую отделку.
 			+e.lastRow.row 

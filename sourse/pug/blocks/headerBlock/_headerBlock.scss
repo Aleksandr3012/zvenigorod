@@ -10,22 +10,22 @@
 	// background-color: #000000;
 
 	.section-title {
-		max-width: rem(580);
+		max-width: rem(500);
 		padding-bottom: 0;
+		margin-top: 35vh;
 	}
 
-
-	h1, .h1 {
+	h1,
+	.h1 {
 		font-weight: bold;
-		line-height: calc(65/48);
+		line-height: calc(65 / 48);
 		color: #fff;
-	} 
+	}
 
 	&__slider {
 		width: 100vw;
 		height: 100vh;
 	}
-
 
 	&__slide {
 		position: relative;
@@ -36,13 +36,13 @@
 		height: 100vh;
 
 		&::before {
-			content: '';
+			content: "";
 			position: absolute;
 			left: 0;
 			top: 0;
 			width: 100vw;
 			height: 100vh;
-			background-image: url('../img/@1x/webp/gradient.webp');
+			background-image: url("../img/@1x/webp/gradient.webp");
 			background-size: cover;
 		}
 
@@ -50,7 +50,7 @@
 			width: 100vw;
 			height: 100vh;
 			object-fit: cover;
-			filter: brightness(.9);
+			filter: brightness(0.9);
 		}
 	}
 
@@ -59,7 +59,7 @@
 		z-index: 5;
 		flex-grow: 1;
 		@include media-breakpoint-up(md) {
-			padding-left: rem(110);
+			// padding-left: rem(110);
 			padding-right: rem(110);
 		}
 		@include media-breakpoint-up(xl) {
@@ -89,7 +89,6 @@
 	.swiper-pagination {
 		display: inline-flex;
 		@include media-breakpoint-up(lg) {
-			
 			width: auto;
 			flex-direction: column;
 			align-items: flex-end;
@@ -108,22 +107,20 @@
 		width: 16px;
 		height: 16px;
 		background: #f6f6f6;
-
-
 	}
 
 	.swiper-pagination-bullet {
 		margin: 0 6px;
 		@include media-breakpoint-up(lg) {
 			margin: 6px 0px;
-			}
+		}
 	}
 
 	.swiper-pagination-bullet-active {
 		position: relative;
 
 		&::before {
-			content: '';
+			content: "";
 			@include a-cent1;
 			width: 24px;
 			height: 24px;
@@ -173,4 +170,4 @@
 
 	@include media-breakpoint-down(xs) {
 	}
-}// end.headerBlock
+} // end.headerBlock

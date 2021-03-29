@@ -1,6 +1,4 @@
- 
-	  
-.soc{
+.soc {
 	display: flex;
 	@include media-breakpoint-up(sm) {
 		flex-direction: column;
@@ -9,8 +7,8 @@
 		@include roww(15px);
 	}
 	padding-top: rem(10);
-	&__item{
-		text-decoration: none !important; 
+	&__item {
+		text-decoration: none !important;
 		@include mt;
 		display: flex;
 		align-items: center;
@@ -32,31 +30,27 @@
 		span {
 			font-size: $h4-font-size;
 			font-weight: bold;
+			line-height: 1;
+			display: inline-block;
 		}
 
-		
-		&:hover{
-		 	// box-shadow: 0 0 33px 0px rgba(255, 83, 0, 0.16);
+		&:hover {
+			// box-shadow: 0 0 33px 0px rgba(255, 83, 0, 0.16);
 			// opacity: .6 ;
 		}
-		
 	}
-	.icon{
+	.icon {
 		font-size: rem(25);
 	}
-	 
-
 }
- 
 
-.counter{
+.counter {
 	counter-reset: num;
 	&__item {
-		position: relative; 
+		position: relative;
 		&::before {
 			content: counter(num);
 			counter-increment: num;
 		}
 	}
 }
-
