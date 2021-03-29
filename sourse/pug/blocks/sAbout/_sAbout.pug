@@ -20,7 +20,7 @@ mixin sAbout(data)
 								mixin slide(i)
 									+e.slide.swiper-slide
 										a(href=`img/@2x/${i}.jpg` data-fancybox="photo1") 
-											+pic(`${i}.jpg`,'','')
+											+pic(`${i}.jpg`)
 								- for (var x = 1; x < 17; x++)
 									+slide(x)
 						+e.slideDescr 
@@ -36,7 +36,7 @@ mixin sAbout(data)
 				.col-lg-6.col-xl-5
 					//- +e.photoWrap(href=`img/@2x/photo1.jpg` data-fancybox="photo2")
 					+e.photoWrap
-						+pic('photo1.jpg','','')
+						+pic('photo1.jpg')
 						+e.DIV.slideDescr--sm 
 							+e.saleWrap
 								+e.sale 10%
@@ -46,7 +46,7 @@ mixin sAbout(data)
 				.col-lg-6
 					//- +e.photoWrap--mt(href=`img/@2x/photo2.png` data-fancybox="photo3")
 					+e.photoWrap--mt
-						+pic('photo2.png','','')
+						+pic('photo2.png')
 						+e.DIV.slideDescr 
 							h4 РАССРОЧКА от&nbsp;застройщика
 							p Платите половину стоимости и&nbsp;остальные&nbsp;50% в&nbsp;течении 2-х месяцев.
@@ -57,7 +57,7 @@ mixin sAbout(data)
 								mixin slide(i)
 									+e.slide.swiper-slide
 										a(href=`img/@2x/2-${i}.jpg` data-fancybox="photo4") 
-											+pic(`2-${i}.jpg`,'','')
+											+pic(`2-${i}.jpg`)
 								- for (var x = 1; x < 11; x++)
 									+slide(x)
 						+e.slideDescr 
