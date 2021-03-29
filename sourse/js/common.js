@@ -1,3 +1,4 @@
+// const { map } = require("jquery");
 
 const JSCCommon = {
 
@@ -248,13 +249,6 @@ function eventHandler() {
 	JSCCommon.heightwindow();
 	JSCCommon.animateScroll();
 
-	// JSCCommon.CustomInputFile(); 
-	var x = window.location.host;
-	let screenName;
-	screenName = 'index.png';
-	if (screenName && x.includes("localhost:30")) {
-		document.body.insertAdjacentHTML("beforeend", `<div class="pixel-perfect" style="background-image: url(screen/${screenName});"></div>`);
-	}
 
 
 	function whenResize() {
@@ -472,6 +466,10 @@ function eventHandler() {
 			});
 	});
 	// modal window
+
+	setTimeout(() => {
+		$('.sMap__map').html(`<div style="position:relative;overflow:hidden;"><a href="https://yandex.ru/maps?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Яндекс.Карты</a><a href="https://yandex.ru/maps/?from=api-maps&ll=37.090039%2C55.749118&mode=routes&origin=jsapi_2_1_74&rtext=55.791125%2C37.366650~55.716852%2C36.836304&rtt=auto&ruri=~&utm_medium=mapframe&utm_source=maps&z=11.8" style="color:#eee;font-size:12px;position:absolute;top:14px;">коттеджный посёлок Акатово-Парк: как доехать на автомобиле, общественным транспортом или пешком – Яндекс.Карты</a><iframe loading="lazy" src="https://yandex.ru/map-widget/v1/-/CCUUeWT3tA" width="560" height="400" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>`)
+	}, 3000);
 
 };
 if (document.readyState !== 'loading') {

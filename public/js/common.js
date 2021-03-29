@@ -6,6 +6,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+// const { map } = require("jquery");
 var JSCCommon = {
 	btnToggleMenuMobile: [].slice.call(document.querySelectorAll(".toggle-menu-mobile--js")),
 	menuMobile: document.querySelector(".menu-mobile--js"),
@@ -256,15 +257,7 @@ function eventHandler() {
 	JSCCommon.inputMask();
 	JSCCommon.sendForm();
 	JSCCommon.heightwindow();
-	JSCCommon.animateScroll(); // JSCCommon.CustomInputFile(); 
-
-	var x = window.location.host;
-	var screenName;
-	screenName = 'index.png';
-
-	if (screenName && x.includes("localhost:30")) {
-		document.body.insertAdjacentHTML("beforeend", "<div class=\"pixel-perfect\" style=\"background-image: url(screen/".concat(screenName, ");\"></div>"));
-	}
+	JSCCommon.animateScroll();
 
 	function whenResize() {
 		var topNav = document.querySelector('.top-nav  ');
@@ -417,6 +410,10 @@ function eventHandler() {
 			src: '#modal-call'
 		});
 	}); // modal window
+
+	setTimeout(function () {
+		$('.sMap__map').html("<div style=\"position:relative;overflow:hidden;\"><a href=\"https://yandex.ru/maps?utm_medium=mapframe&utm_source=maps\" style=\"color:#eee;font-size:12px;position:absolute;top:0px;\">\u042F\u043D\u0434\u0435\u043A\u0441.\u041A\u0430\u0440\u0442\u044B</a><a href=\"https://yandex.ru/maps/?from=api-maps&ll=37.090039%2C55.749118&mode=routes&origin=jsapi_2_1_74&rtext=55.791125%2C37.366650~55.716852%2C36.836304&rtt=auto&ruri=~&utm_medium=mapframe&utm_source=maps&z=11.8\" style=\"color:#eee;font-size:12px;position:absolute;top:14px;\">\u043A\u043E\u0442\u0442\u0435\u0434\u0436\u043D\u044B\u0439 \u043F\u043E\u0441\u0451\u043B\u043E\u043A \u0410\u043A\u0430\u0442\u043E\u0432\u043E-\u041F\u0430\u0440\u043A: \u043A\u0430\u043A \u0434\u043E\u0435\u0445\u0430\u0442\u044C \u043D\u0430 \u0430\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u0435, \u043E\u0431\u0449\u0435\u0441\u0442\u0432\u0435\u043D\u043D\u044B\u043C \u0442\u0440\u0430\u043D\u0441\u043F\u043E\u0440\u0442\u043E\u043C \u0438\u043B\u0438 \u043F\u0435\u0448\u043A\u043E\u043C \u2013 \u042F\u043D\u0434\u0435\u043A\u0441.\u041A\u0430\u0440\u0442\u044B</a><iframe loading=\"lazy\" src=\"https://yandex.ru/map-widget/v1/-/CCUUeWT3tA\" width=\"560\" height=\"400\" frameborder=\"1\" allowfullscreen=\"true\" style=\"position:relative;\"></iframe></div>");
+	}, 3000);
 }
 
 ;
