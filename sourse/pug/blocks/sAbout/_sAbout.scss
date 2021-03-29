@@ -151,11 +151,25 @@
 		font-weight: bold;
 		position: absolute;
 		font-size: rem(130);
+		display: flex;
+		align-items: flex-start;
 		color: #fff;
 		left: 0;
 		bottom: 0;
-		line-height: 0.8;
+		line-height: 1;
+		margin-bottom: -10px;
 		@extend .mono;
+
+		span {
+			font-size: $em-base;
+			writing-mode: vertical-rl;
+			transform: rotate(180deg);
+			letter-spacing: rem(7);
+			@include media-breakpoint-up(md) {
+				letter-spacing: rem(9);
+			}
+			margin-left: rem(15);
+		}
 	}
 
 	&__photoWrap {
